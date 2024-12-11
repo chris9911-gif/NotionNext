@@ -81,6 +81,7 @@ function scanSubdirectories(directory) {
  */
 
 const nextConfig = {
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true
   },
