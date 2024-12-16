@@ -166,7 +166,7 @@ const nextConfig = {
           // 伪静态重写
           {
             source: '/:path*.html',
-            destination: '/:path*html'
+            destination: '/:path*'
           }
         ]
       },
