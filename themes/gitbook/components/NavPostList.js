@@ -35,9 +35,11 @@ const NavPostList = props => {
     // 展开文件夹
     setTimeout(() => {
       const currentPath = decodeURIComponent(router.asPath.split('?')[0])
+var index = currentPath.lastIndexOf("\/");
+str = currentPath.substring(0,index+1);
       const defaultOpenIndex = getDefaultOpenIndexByPath(
         categoryFolders,
-        currentPath
+        str
       )
       setExpandedGroups([defaultOpenIndex])
     }, 500)
