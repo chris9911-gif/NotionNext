@@ -35,8 +35,6 @@ const NavPostList = props => {
     // 展开文件夹
     setTimeout(() => {
       const currentPath = decodeURIComponent(router.asPath.split('?')[0])
-var index = currentPath.lastIndexOf("\/");
-str = currentPath.substring(0,index+1);
       const defaultOpenIndex = getDefaultOpenIndexByPath(
         categoryFolders,
         str
@@ -151,17 +149,4 @@ function groupArticles(filteredNavPages) {
  * @param {*} path
  * @returns {number} 返回需要展开的菜单索引
  */
-function getDefaultOpenIndexByPath(categoryFolders, path) {
-  // 查找满足条件的第一个索引
-  const index = categoryFolders.findIndex(group => {
-    return group.items.some(post => path === post.href)
-  })
-
-  // 如果找到满足条件的索引，则设置为该索引
-  if (index !== -1) {
-    return index
-  }
-
-  return 0
-}
 export default NavPostList
