@@ -81,7 +81,7 @@ function scanSubdirectories(directory) {
  */
 
 const nextConfig = {
-  //trailingSlash: true,
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true
   },
@@ -167,7 +167,7 @@ rewrites: process.env.EXPORT
           // 伪静态重写
           {
             source: '/:path*.html',
-            destination: '/:path*html'
+            destination: '/:path*'
           }
         ]
       },
