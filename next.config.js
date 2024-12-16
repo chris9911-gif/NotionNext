@@ -166,8 +166,8 @@ rewrites: process.env.EXPORT
           ...langsRewrites,
           // 伪静态重写
           {
-            source: '/:path*,
-            destination: '/:path*.html'
+            source: '/:path*.html',
+            destination: '/:path*html'
           }
         ]
       },
