@@ -248,6 +248,44 @@ const LayoutIndex = props => {
   const router = useRouter()
   const index = siteConfig('GITBOOK_INDEX_PAGE', 'about', CONFIG)
   const [hasRedirected, setHasRedirected] = useState(false) // 添加状态追踪是否已重定向
+  useEffect(() => {
+    const tryRedirect = async () => {
+      if (!hasRedirected) {
+        // 仅当未重定向时执行
+        setHasRedirected(true) // 更新状态，防止多次执行
+
+        // 重定向到指定文章
+        router.push(index).then(() => {
+          setTimeout(() => {
+            const article = document.querySelector(
+              '#article-wrapper #notion-article'
+            )
+            if (!article) {
+              console.log(
+                '',
+                index
+              )
+
+              // 显示错误信息
+              const containerInner = document.querySelector(
+                '#theme-gitbook #container-inner'
+              )
+              const newHTML = `<h1 class="text-3xl pt-12 dark:text-gray-300"></h1><blockquote class="notion-quote notion-block-ce76391f3f2842d386468ff1eb705b92"><div></div></blockquote>`
+              containerInner?.insertAdjacentHTML('afterbegin', newHTML)
+            }
+          }, 2000)
+        })
+      }
+    }
+
+    if (index) {
+      console.log('重定向', index)
+      tryRedirect()
+    } else {
+      console.log('无重定向', index)
+    }
+  }, [index, hasRedirected]) // 将 hasRedirected 作为依赖确保状态变更时更新
+  
   return null // 不渲染任何内容
 }
 
