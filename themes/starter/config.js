@@ -18,7 +18,7 @@ const CONFIG = {
     'https://docs.draineragency.sol.build/', // 英雄区按钮
 
   // 英雄区配图，如需隐藏，改为空值即可 ''
-  STARTER_HERO_PREVIEW_IMAGE: '/images/starter/hero/hero-image.webp', // 产品预览图 ，默认读取public目录下图片
+  STARTER_HERO_PREVIEW_IMAGE: 'https://www.youtube.com/watch?v=vhk9QUCSK6I&list=PLWjnJlegRSJx-pjN15HZNektPldBReZrZ&index=18', // 产品预览图 ，默认读取public目录下图片
   STARTER_HERO_BANNER_IMAGE: '', // hero区下方的全宽图
 
   // 顶部右侧导航暗流
